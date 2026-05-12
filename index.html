@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Pitanga Farma
+  </title>
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+
+    body {
+
+      background: #f5f7fa;
+
+      overflow-x: hidden;
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+    }
+
+    .product-card {
+
+      transition: 0.25s;
+    }
+
+    .product-card:hover {
+
+      transform: translateY(-6px);
+
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .cart-badge {
+
+      position: absolute;
+
+      top: -8px;
+
+      right: -8px;
+
+      background: red;
+
+      color: white;
+
+      width: 22px;
+
+      height: 22px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 12px;
+    }
+
+    .discount-badge {
+
+      position: absolute;
+
+      top: 12px;
+
+      left: 12px;
+
+      background: red;
+
+      color: white;
+
+      padding: 6px 10px;
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      z-index: 20;
+    }
+
+    .hero-bg {
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.90),
+          rgba(255,255,255,0.90)
+        ),
+        url('https://cdn.pixabay.com/photo/2023/09/20/07/37/doctor-8264060_1280.jpg');
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+    img {
+
+      user-select: none;
+    }
+
+    button {
+
+      transition: 0.2s;
+    }
+
+    button:active {
+
+      transform: scale(0.97);
+    }
+
+    .toast-show {
+
+      opacity: 1 !important;
+
+      transform:
+        translateX(-50%)
+        translateY(0) !important;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- ===================================================== -->
+<!-- TOAST -->
+<!-- ===================================================== -->
+
+<div
+  id="toast"
+  class="fixed bottom-5 left-1/2 -translate-x-1/2 translate-y-20 bg-green-600 text-white px-6 py-4 rounded-2xl shadow-2xl opacity-0 transition-all duration-300 z-[9999] font-bold"
+>
+  ✅ Produto adicionado
+</div>
+
+<!-- ===================================================== -->
+<!-- HEADER -->
+<!-- ===================================================== -->
+
+<header
+  class="bg-[#0056b3] text-white sticky top-0 z-50 shadow-lg"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+  >
+
+    <div class="flex items-center gap-3">
+
+      <i class="fa-solid fa-prescription-bottle-medical text-3xl"></i>
+
+      <div>
+
+        <h1 class="text-2xl font-bold">
+          Pitanga Farma
+        </h1>
+
+        <p class="text-sm opacity-80">
+          Sua saúde em boas mãos! ♥️
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- CARRINHO -->
+
+    <a
+      href="#cesta"
+      class="relative"
+    >
+
+      <i class="fa-solid fa-cart-shopping text-2xl"></i>
+
+      <span
+        id="cart-count"
+        class="cart-badge"
+      >
+        0
+      </span>
+
+    </a>
+
+  </div>
+
+</header>
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<section
+  class="hero-bg py-20"
+>
+
+  <div class="max-w-6xl mx-auto text-center px-4">
+
+    <h2
+      class="text-5xl font-black text-[#0056b3] mb-5"
+    >
+
+      Produtos Mais Vendidos
+
+    </h2>
+
+    <p class="text-gray-700 text-xl">
+
+      Promoções especiais da Pitanga Farma
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- PRODUTOS -->
+<!-- ===================================================== -->
+
+<section
+  class="max-w-7xl mx-auto px-4 py-10"
+>
+
+  <h2 class="text-3xl font-bold text-red-600 mb-6">
+    🔥 Promoções
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <!-- ITEM -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
+
+      <div class="discount-badge">
+        -10%
+      </div>
+
+      <img
+        src="https://m.media-amazon.com/images/I/61sNR6k7vDL._AC_SY300_SX300_QL70_ML2_.jpg"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Creme Anti-Idade
+        </h3>
+
+        <div class="flex items-center gap-2 mb-4">
+
+          <span class="text-gray-400 line-through">
+            R$ 49,90
+          </span>
+
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 44,90
+          </span>
+
+        </div>
+
+        <button
+          onclick="addToCart('Creme Anti-Idade',44.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
+
+      <div class="discount-badge">
+        -10%
+      </div>
+
+      <img
+        src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSUifT3X_rcNl0nuwd8ACxWmosPCvQ6VCsmo1jhLUSBGlT68nx0_7C0_ikjMDbrWEEzU2OjnWGPm1xvSOHIs846tV-X2GZeEbHn1Iy2q-QVCFoIOr2lpZYg"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Rexona Clinical
+        </h3>
+
+        <div class="flex items-center gap-2 mb-4">
+
+          <span class="text-gray-400 line-through">
+            R$ 22,90
+          </span>
+
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 19,90
+          </span>
+
+        </div>
+
+        <button
+          onclick="addToCart('Rexona Clinical',19.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
+
+      <div class="discount-badge">
+        -10%
+      </div>
+
+      <img
+        src="https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F13319424.webp&w=828&q=75"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Vitamina C Infantil
+        </h3>
+
+        <div class="flex items-center gap-2 mb-4">
+
+          <span class="text-gray-400 line-through">
+            R$ 16,90
+          </span>
+
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 14,90
+          </span>
+
+        </div>
+
+        <button
+          onclick="addToCart('Vitamina C Infantil',14.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
+
+      <div class="discount-badge">
+        -10%
+      </div>
+
+      <img
+        src="https://www.drogaraia.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F10652359.webp&w=828&q=75"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Protetor FPS 30
+        </h3>
+
+        <div class="flex items-center gap-2 mb-4">
+
+          <span class="text-gray-400 line-through">
+            R$ 34,90
+          </span>
+
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 29,90
+          </span>
+
+        </div>
+
+        <button
+          onclick="addToCart('Protetor FPS 30',29.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
+
+      <div class="discount-badge">
+        -10%
+      </div>
+
+      <img
+        src="https://m.media-amazon.com/images/I/617HsL3ssoL._AC_SY300_SX300_QL70_ML2_.jpg"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Leite Ninho Forti+
+        </h3>
+
+        <div class="flex items-center gap-2 mb-4">
+
+          <span class="text-gray-400 line-through">
+            R$ 29,90
+          </span>
+
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 25,90
+          </span>
+
+        </div>
+
+        <button
+          onclick="addToCart('Leite Ninho Forti+',25.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ===================================================== -->
+<!-- 💊 MEDICAMENTOS -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-blue-600 mb-5">
+    💊 Medicamentos
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Dipirona
+        </h3>
+
+        <p class="text-blue-600 text-2xl font-bold mb-4">
+          R$ 9,90
+        </p>
+
+        <button
+          onclick="addToCart('Dipirona',9.90)"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Paracetamol
+        </h3>
+
+        <p class="text-blue-600 text-2xl font-bold mb-4">
+          R$ 12,90
+        </p>
+
+        <button
+          onclick="addToCart('Paracetamol',12.90)"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Ibuprofeno
+        </h3>
+
+        <p class="text-blue-600 text-2xl font-bold mb-4">
+          R$ 16,90
+        </p>
+
+        <button
+          onclick="addToCart('Ibuprofeno',16.90)"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Neosaldina
+        </h3>
+
+        <p class="text-blue-600 text-2xl font-bold mb-4">
+          R$ 14,90
+        </p>
+
+        <button
+          onclick="addToCart('Neosaldina',14.90)"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1631549916768-4119b4123a21?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Buscopan
+        </h3>
+
+        <p class="text-blue-600 text-2xl font-bold mb-4">
+          R$ 18,90
+        </p>
+
+        <button
+          onclick="addToCart('Buscopan',18.90)"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- 🌸 SAÚDE FEMININA -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-pink-600 mb-5">
+    🌸 Saúde Feminina
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Sempre Livre</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 12,90</p>
+        <button onclick="addToCart('Sempre Livre',12.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Dermacyd</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Dermacyd',24.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Teste Gravidez</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Teste Gravidez',18.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Gino-Canesten</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 39,90</p>
+        <button onclick="addToCart('Gino-Canesten',39.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Gillette Venus</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Gillette Venus',22.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- 🦷 HIGIENE BUCAL -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-cyan-600 mb-5">
+    🦷 Higiene Bucal
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <!-- ITEM 1 -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Colgate Total 12
+        </h3>
+
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
+          R$ 9,90
+        </p>
+
+        <button
+          onclick="addToCart('Colgate Total 12',9.90)"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM 2 -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1559591937-abc6c1c5d6d4?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Listerine Cool Mint
+        </h3>
+
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
+          R$ 18,90
+        </p>
+
+        <button
+          onclick="addToCart('Listerine Cool Mint',18.90)"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM 3 -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1588771930296-88c2cb03f386?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Escova Oral-B
+        </h3>
+
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
+          R$ 12,90
+        </p>
+
+        <button
+          onclick="addToCart('Escova Oral-B',12.90)"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM 4 -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Fio Dental Johnson
+        </h3>
+
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
+          R$ 8,90
+        </p>
+
+        <button
+          onclick="addToCart('Fio Dental Johnson',8.90)"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ITEM 5 -->
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200"
+        class="w-full h-56 object-cover"
+      >
+
+      <div class="p-4">
+
+        <h3 class="font-bold text-lg">
+          Corega Creme
+        </h3>
+
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
+          R$ 24,90
+        </p>
+
+        <button
+          onclick="addToCart('Corega Creme',24.90)"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
+        >
+          Adicionar
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- 💇 CUIDADOS COM CABELO -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-purple-600 mb-5">
+    💇 Cuidados com Cabelo
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- 👶 INFANTIL E BEBÊS -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+    👶 Infantil e Bebês
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- 🩹 PRIMEIROS SOCORROS -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-green-600 mb-5">
+    🩹 Primeiros Socorros
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+</div>
+
+<!-- ===================================================== -->
+<!-- 💪 VITAMINAS -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-orange-500 mb-5">
+    💪 Vitaminas
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ☀️ PROTEÇÃO SOLAR -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-amber-500 mb-5">
+    ☀️ Proteção Solar
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- 🍫 CONVENIÊNCIA -->
+<!-- ===================================================== -->
+
+<div>
+
+  <h2 class="text-3xl font-bold text-brown-600 mb-5">
+    🍫 Conveniência
+  </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">TresemeReconstrução</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </div>
+
+</div>
+
+</section>
+
+ <!-- ===================================================== -->
+<!-- CESTA -->
+<!-- ===================================================== -->
+
+<section
+  id="cesta"
+  class="max-w-4xl mx-auto px-4 pb-12"
+>
+
+  <div class="bg-white rounded-2xl shadow-md p-6">
+
+    <h2 class="text-3xl font-bold text-[#0056b3] mb-5">
+      🛒 Sua Cesta
+    </h2>
+
+    <!-- ===================================================== -->
+    <!-- GRUPO DE CUPONS -->
+    <!-- ===================================================== -->
+
+    <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5 mb-6">
+
+      <h3 class="text-xl font-bold text-[#0056b3] mb-2">
+        🎁 Quer fazer parte do nosso grupo de cupons e promoções?
+      </h3>
+
+      <p class="text-gray-600 mb-4">
+        Cadastre seu nome e WhatsApp para receber descontos exclusivos,
+        ofertas relâmpago e promoções especiais da Pitanga Farma.
+      </p>
+
+      <form
+        id="coupon-group-form"
+        class="grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
+
+        <!-- NOME -->
+
+        <input
+          type="text"
+          id="group-name"
+          placeholder="Seu nome"
+          required
+          class="border border-gray-300 rounded-xl p-4 outline-none focus:border-[#0056b3]"
+        >
+
+        <!-- WHATS -->
+
+        <input
+          type="text"
+          id="group-phone"
+          placeholder="Seu WhatsApp"
+          required
+          class="border border-gray-300 rounded-xl p-4 outline-none focus:border-[#0056b3]"
+        >
+
+        <!-- BOTÃO -->
+
+        <button
+          type="submit"
+          class="bg-[#0056b3] hover:bg-blue-700 text-white rounded-xl font-bold p-4 transition"
+        >
+          Entrar no Grupo
+        </button>
+
+      </form>
+
+      <!-- MENSAGEM -->
+
+      <p
+        id="group-message"
+        class="mt-4 font-bold text-green-600"
+      ></p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CUPOM -->
+    <!-- ===================================================== -->
+
+    <div class="bg-gray-50 border rounded-2xl p-5 mb-6">
+
+      <h3 class="text-xl font-bold mb-3 text-[#0056b3]">
+        🎟️ Cupom de Desconto
+      </h3>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+
+        <input
+          type="text"
+          id="coupon-input"
+          placeholder="Digite seu cupom"
+          class="flex-1 border border-gray-300 rounded-xl p-4 outline-none focus:border-[#0056b3]"
+        >
+
+        <button
+          onclick="applyCoupon()"
+          class="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-xl font-bold transition"
+        >
+          Aplicar Cupom
+        </button>
+
+      </div>
+
+      <p
+        id="coupon-message"
+        class="mt-4 font-bold"
+      ></p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- ITENS -->
+    <!-- ===================================================== -->
+
+    <div
+      id="cart-items"
+      class="space-y-4 mb-6"
+    >
+
+      <p class="text-gray-500">
+        Nenhum item adicionado.
+      </p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- TOTAL -->
+    <!-- ===================================================== -->
+
+    <div class="space-y-3 mb-6">
+
+      <div class="flex justify-between items-center">
+
+        <span class="text-lg font-bold">
+          Subtotal:
+        </span>
+
+        <span
+          id="cart-subtotal"
+          class="text-lg font-bold"
+        >
+          R$ 0,00
+        </span>
+
+      </div>
+
+      <div class="flex justify-between items-center">
+
+        <span class="text-lg font-bold text-red-600">
+          Desconto:
+        </span>
+
+        <span
+          id="discount-value"
+          class="text-lg font-bold text-red-600"
+        >
+          R$ 0,00
+        </span>
+
+      </div>
+
+      <div class="border-t pt-4 flex justify-between items-center">
+
+        <span class="text-2xl font-bold">
+          Total:
+        </span>
+
+        <span
+          id="cart-total"
+          class="text-3xl font-bold text-green-600"
+        >
+          R$ 0,00
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- BOTÃO FINALIZAR -->
+    <!-- ===================================================== -->
+
+    <button
+      onclick="finishOrder()"
+      class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold text-lg transition"
+    >
+
+      Finalizar Pedido no WhatsApp
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- RODAPÉ -->
+<!-- ===================================================== -->
+
+<footer class="bg-[#003b7a] text-white mt-12">
+
+  <div class="max-w-7xl mx-auto px-4 py-12">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- LOJA -->
+
+      <div>
+
+        <h3 class="text-2xl font-bold mb-4">
+          💊 Pitanga Farma
+        </h3>
+
+        <p class="opacity-90 leading-relaxed">
+          Trabalhamos com medicamentos, higiene,
+          beleza, vitaminas, produtos infantis e muito mais.
+          Sempre trazendo promoções exclusivas para nossos clientes.
+        </p>
+
+      </div>
+
+      <!-- CONTATO -->
+
+      <div>
+
+        <h3 class="text-2xl font-bold mb-4">
+          📞 Contato
+        </h3>
+
+        <ul class="space-y-3 opacity-90">
+
+          <li>
+            📍 Pitanga – Tianguá (Rod. CE 187)
+          </li>
+
+          <li>
+            📱 WhatsApp: (88) 99622-1236
+          </li>
+
+          <li>
+            ❤️ Cuidando da sua saúde e da sua família
+          </li>
+
+          <li>
+            🚚 Entrega rápida direto na sua casa
+          </li>
+
+          <li>
+            ⏰ Atendimento: 07h às 22h
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- LEGAIS -->
+
+      <div>
+
+        <h3 class="text-2xl font-bold mb-4">
+          ⚖️ Informações Legais
+        </h3>
+
+        <p class="opacity-90 leading-relaxed">
+          Todos os preços podem sofrer alterações sem aviso prévio.
+          Promoções válidas enquanto durarem os estoques.
+          Imagens meramente ilustrativas.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- FINAL -->
+
+    <div class="border-t border-white/20 mt-10 pt-6 text-center">
+
+      <p class="opacity-90">
+
+        © 2026 Farmácia Tianguá — Todos os direitos reservados.
+
+      </p>
+
+      <p class="mt-2 text-sm opacity-70">
+
+        Desenvolvido por Zapt Vitrine & Marketing Digital
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script>
+
+const expirationDate =
+  new Date("2026-06-10");
+
+const graceDays = 5;
+
+const today =
+  new Date();
+
+const diffTime =
+  today - expirationDate;
+
+const diffDays =
+  diffTime / (1000 * 60 * 60 * 24);
+
+if (diffDays > graceDays) {
+
+  document.body.innerHTML = `
+
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      background:#f5f5f5;
+      font-family:Arial;
+      text-align:center;
+      padding:20px;
+    ">
+
+      <h1 style="
+        color:red;
+        font-size:40px;
+        margin-bottom:20px;
+      ">
+        Assinatura Expirada
+      </h1>
+
+      <p style="
+        font-size:20px;
+        color:#333;
+        max-width:600px;
+      ">
+        Este catálogo foi temporariamente desativado.
+        Entre em contato com a Zapt Vitrine & Marketing Digital
+        para renovar a assinatura.
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+
+  // =====================================================
+  // CARRINHO
+  // =====================================================
+
+  let cart = [];
+
+  let discount = 0;
+
+  // =====================================================
+  // ADICIONAR AO CARRINHO
+  // =====================================================
+
+  function addToCart(name, price) {
+
+    const existingItem =
+      cart.find(item => item.name === name);
+
+    if (existingItem) {
+
+      existingItem.quantity++;
+
+    } else {
+
+      cart.push({
+        name,
+        price,
+        quantity: 1
+      });
+
+    }
+
+    updateCart();
+
+    // ROLAR PARA CESTA
+
+    document
+      .getElementById("cesta")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  }
+
+  // =====================================================
+  // ATUALIZAR CARRINHO
+  // =====================================================
+
+  function updateCart() {
+
+    const cartItems =
+      document.getElementById("cart-items");
+
+    const cartTotal =
+      document.getElementById("cart-total");
+
+    const cartSubtotal =
+      document.getElementById("cart-subtotal");
+
+    const cartCount =
+      document.getElementById("cart-count");
+
+    const discountValue =
+      document.getElementById("discount-value");
+
+    cartItems.innerHTML = "";
+
+    let subtotal = 0;
+
+    let quantityTotal = 0;
+
+    if (cart.length === 0) {
+
+      cartItems.innerHTML = `
+        <p class="text-gray-500">
+          Nenhum item adicionado.
+        </p>
+      `;
+
+      cartSubtotal.innerText = "R$ 0,00";
+      cartTotal.innerText = "R$ 0,00";
+      discountValue.innerText = "R$ 0,00";
+      cartCount.innerText = "0";
+
+      return;
+    }
+
+    cart.forEach((item, index) => {
+
+      const itemSubtotal =
+        item.price * item.quantity;
+
+      subtotal += itemSubtotal;
+
+      quantityTotal += item.quantity;
+
+      cartItems.innerHTML += `
+
+        <div class="bg-gray-50 rounded-xl p-4 border">
+
+          <div class="flex justify-between items-center">
+
+            <div>
+
+              <h3 class="font-bold text-lg">
+                ${item.name}
+              </h3>
+
+              <p class="text-gray-600">
+                R$ ${item.price.toFixed(2)}
+              </p>
+
+            </div>
+
+            <button
+              onclick="removeItem(${index})"
+              class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+            >
+              Remover
+            </button>
+
+          </div>
+
+          <div class="flex items-center gap-3 mt-4">
+
+            <button
+              onclick="decreaseQuantity(${index})"
+              class="bg-gray-200 w-10 h-10 rounded-lg text-xl"
+            >
+              -
+            </button>
+
+            <span class="font-bold text-lg">
+              ${item.quantity}
+            </span>
+
+            <button
+              onclick="increaseQuantity(${index})"
+              class="bg-[#0056b3] text-white w-10 h-10 rounded-lg text-xl"
+            >
+              +
+            </button>
+
+          </div>
+
+          <div class="mt-3 text-right font-bold">
+
+            Subtotal:
+            R$ ${itemSubtotal.toFixed(2)}
+
+          </div>
+
+        </div>
+
+      `;
+    });
+
+    // DESCONTO
+
+    const total =
+      subtotal - discount;
+
+    cartSubtotal.innerText =
+      `R$ ${subtotal.toFixed(2)}`;
+
+    discountValue.innerText =
+      `- R$ ${discount.toFixed(2)}`;
+
+    cartTotal.innerText =
+      `R$ ${total.toFixed(2)}`;
+
+    cartCount.innerText =
+      quantityTotal;
+
+  }
+
+  // =====================================================
+  // AUMENTAR QUANTIDADE
+  // =====================================================
+
+  function increaseQuantity(index) {
+
+    cart[index].quantity++;
+
+    updateCart();
+
+  }
+
+  // =====================================================
+  // DIMINUIR QUANTIDADE
+  // =====================================================
+
+  function decreaseQuantity(index) {
+
+    if (cart[index].quantity > 1) {
+
+      cart[index].quantity--;
+
+    } else {
+
+      cart.splice(index, 1);
+
+    }
+
+    updateCart();
+
+  }
+
+  // =====================================================
+  // REMOVER ITEM
+  // =====================================================
+
+  function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+  }
+
+  // =====================================================
+  // CUPONS
+  // =====================================================
+
+  function applyCoupon() {
+
+    const coupon =
+      document
+      .getElementById("coupon-input")
+      .value
+      .toUpperCase();
+
+    const message =
+      document.getElementById("coupon-message");
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+
+      subtotal += item.price * item.quantity;
+
+    });
+
+    // CUPONS
+
+    if (coupon === "CLIENTE10") {
+
+      discount = subtotal * 0.10;
+
+      message.innerHTML =
+        "✅ Cupom aplicado: 10% OFF";
+
+      message.className =
+        "mt-4 font-bold text-green-600";
+
+    }
+
+    else if (coupon === "PROMO20") {
+
+      discount = subtotal * 0.20;
+
+      message.innerHTML =
+        "✅ Cupom aplicado: 20% OFF";
+
+      message.className =
+        "mt-4 font-bold text-green-600";
+
+    }
+
+    else if (coupon === "VIP30") {
+
+      discount = subtotal * 0.30;
+
+      message.innerHTML =
+        "✅ Cupom aplicado: 30% OFF";
+
+      message.className =
+        "mt-4 font-bold text-green-600";
+
+    }
+
+    else {
+
+      discount = 0;
+
+      message.innerHTML =
+        "❌ Cupom inválido.";
+
+      message.className =
+        "mt-4 font-bold text-red-600";
+
+    }
+
+    updateCart();
+
+  }
+
+  // =====================================================
+  // FINALIZAR PEDIDO
+  // =====================================================
+
+  function finishOrder() {
+
+    if (cart.length === 0) {
+
+      alert("Adicione itens ao carrinho.");
+
+      return;
+    }
+
+    let subtotal = 0;
+
+    let message =
+      "Olá! Gostaria de fazer um pedido:%0A%0A";
+
+    cart.forEach((item, index) => {
+
+      const itemSubtotal =
+        item.price * item.quantity;
+
+      subtotal += itemSubtotal;
+
+      message +=
+        `${index + 1}. ${item.name}%0A`;
+
+      message +=
+        `Qtd: ${item.quantity}%0A`;
+
+      message +=
+        `Subtotal: R$ ${itemSubtotal.toFixed(2)}%0A%0A`;
+
+    });
+
+    const total =
+      subtotal - discount;
+
+    message +=
+      `Desconto: R$ ${discount.toFixed(2)}%0A`;
+
+    message +=
+      `TOTAL: R$ ${total.toFixed(2)}`;
+
+    const phone =
+      "5588996221236";
+
+    const url =
+      `https://wa.me/${phone}?text=${message}`;
+
+    window.open(url, "_blank");
+
+  }
+
+  // =====================================================
+// FORMULÁRIO DO GRUPO
+// =====================================================
+
+document
+  .getElementById("coupon-group-form")
+  .addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name =
+      document.getElementById("group-name").value;
+
+    const phone =
+      document.getElementById("group-phone").value;
+
+    // =====================================================
+    // TEXTO WHATSAPP
+    // =====================================================
+
+    const message =
+      `Olá! Meu nome é ${name} e quero entrar no grupo exclusivo de descontos da Farmácia Tianguá.%0A%0AMeu WhatsApp: ${phone}`;
+
+    // =====================================================
+    // WHATSAPP DA EMPRESA
+    // =====================================================
+
+    const companyPhone =
+      "5588996221236";
+
+    // =====================================================
+    // LINK
+    // =====================================================
+
+    const url =
+      `https://wa.me/${companyPhone}?text=${message}`;
+
+    // =====================================================
+    // ABRIR WHATSAPP
+    // =====================================================
+
+    window.open(url, "_blank");
+
+    // =====================================================
+    // MENSAGEM
+    // =====================================================
+
+    document.getElementById("group-message").innerHTML =
+      `✅ Obrigado ${name}! Redirecionando para o WhatsApp da Farmácia Tianguá.`;
+
+    // =====================================================
+    // RESET FORM
+    // =====================================================
+
+    document
+      .getElementById("coupon-group-form")
+      .reset();
+
+  });
+</script>
