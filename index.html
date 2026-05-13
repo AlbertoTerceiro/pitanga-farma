@@ -11,7 +11,7 @@
   >
 
   <title>
-    Bicipeças o Beto
+    Pitanga Farma
   </title>
 
   <!-- TAILWIND -->
@@ -29,7 +29,7 @@
 
     body {
 
-      background: #2f3011;
+      background: #f5f7fa;
 
       overflow-x: hidden;
     }
@@ -48,7 +48,7 @@
 
       transform: translateY(-6px);
 
-      box-shadow: 0 20px 40px rgba(255, 12, 12, 0.12);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     }
 
     .cart-badge {
@@ -105,10 +105,10 @@
 
       background-image:
         linear-gradient(
-          rgba(255, 255, 255, 0.514),
-          rgba(255, 255, 255, 0.548)
+          rgba(255,255,255,0.90),
+          rgba(255,255,255,0.90)
         ),
-        url('https://media.istockphoto.com/id/957065332/pt/foto/warehouse.jpg?s=2048x2048&w=is&k=20&c=rI0jAK7OuSvG6p3RQH8xT7RM4IMntp4Z6Ee-1-RIYtQ=');
+        url('https://cdn.pixabay.com/photo/2023/09/20/07/37/doctor-8264060_1280.jpg');
 
       background-size: cover;
 
@@ -166,7 +166,7 @@
 <!-- ===================================================== -->
 
 <header
-  class="bg-black text-white sticky top-0 z-50 shadow-lg"
+  class="bg-[#0056b3] text-white sticky top-0 z-50 shadow-lg"
 >
 
   <div
@@ -174,29 +174,25 @@
   >
 
     <a
-  href="#topo"
-  class="flex items-center gap-3 cursor-pointer"
->
+      href="#topo"
+      class="flex items-center gap-3 cursor-pointer"
+    >
 
-  <img
-    src="https://cdn.pixabay.com/photo/2017/07/29/02/38/motor-2550495_1280.jpg"
-    alt="Logo Bicipeças o Beto"
-    class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
-  />
+      <i class="fa-solid fa-prescription-bottle-medical text-3xl"></i>
 
-  <div>
+      <div>
 
-    <h1 class="text-2xl font-bold">
-      Bicipeças o Beto
-    </h1>
+        <h1 class="text-2xl font-bold">
+          Pitanga Farma
+        </h1>
 
-    <p class="text-sm opacity-80">
-      Movimentando sua paixão por duas rodas!
-    </p>
+        <p class="text-sm opacity-80">
+          Sua saúde em boas mãos! ♥️
+        </p>
 
-  </div>
+      </div>
 
-</a>
+    </a>
 
     <!-- CARRINHO -->
 
@@ -209,7 +205,7 @@
 
       <span
         id="cart-count"
-        class="cart-badge bg-yellow-500"
+        class="cart-badge"
       >
         0
       </span>
@@ -231,16 +227,16 @@
   <div class="max-w-6xl mx-auto text-center px-4">
 
     <h2
-      class="text-5xl font-black text-black mb-5"
+      class="text-5xl font-black text-[#0056b3] mb-5"
     >
 
       Produtos Mais Vendidos
 
     </h2>
 
-    <p class="text-black text-xl">
+    <p class="text-gray-700 text-xl">
 
-      Promoções especiais da Bicipeças o Beto
+      Promoções especiais da Pitanga Farma
 
     </p>
 
@@ -256,7 +252,7 @@
   class="max-w-7xl mx-auto px-4 py-10"
 >
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-6">
+  <h2 class="text-3xl font-bold text-red-600 mb-6">
     🔥 Promoções
   </h2>
 
@@ -264,38 +260,38 @@
 
     <!-- ITEM -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card relative">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
 
-      <div class="discount-badge bg-yellow-500">
-        -5,88%
+      <div class="discount-badge">
+        -10%
       </div>
 
       <img
-        src="https://images.tcdn.com.br/img/img_prod/1362145/oleo_20w50_super_mobil_4t_533_1_7361ce123d66284b180e77aaa0c0584e.jpg"
+        src="https://m.media-amazon.com/images/I/61sNR6k7vDL._AC_SY300_SX300_QL70_ML2_.jpg"
         class="w-full h-56 object-cover"
       >
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
-          Óleo 20w50 Super - Mobil 4T
+        <h3 class="font-bold text-lg">
+          Creme Anti-Idade
         </h3>
 
         <div class="flex items-center gap-2 mb-4">
 
           <span class="text-gray-400 line-through">
-            R$ 34,00
+            R$ 49,90
           </span>
 
-          <span class="text-white text-2xl font-bold">
-            R$ 32,00
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 44,90
           </span>
 
         </div>
 
         <button
-          onclick="addToCart('Óleo 20w50 Super Mobil 4T',32,0)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"    
+          onclick="addToCart('Creme Anti-Idade',44.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -306,38 +302,38 @@
 
     <!-- ITEM -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card relative">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
 
-      <div class="discount-badge bg-yellow-500">
-        -12%
+      <div class="discount-badge">
+        -10%
       </div>
 
       <img
-        src="https://valflex.vteximg.com.br/arquivos/ids/740480-1000-1000/5348_1.jpg?v=638506197816500000"
+        src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSUifT3X_rcNl0nuwd8ACxWmosPCvQ6VCsmo1jhLUSBGlT68nx0_7C0_ikjMDbrWEEzU2OjnWGPm1xvSOHIs846tV-X2GZeEbHn1Iy2q-QVCFoIOr2lpZYg"
         class="w-full h-56 object-cover"
       >
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
-          Câmara De Ar Aro 18 - Vulcanbor
+        <h3 class="font-bold text-lg">
+          Rexona Clinical
         </h3>
 
         <div class="flex items-center gap-2 mb-4">
 
           <span class="text-gray-400 line-through">
-            R$ 25,00
+            R$ 22,90
           </span>
 
-          <span class="text-white text-2xl font-bold">
-            R$ 22,00
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 19,90
           </span>
 
         </div>
 
         <button
-          onclick="addToCart('Câmara De Ar Aro 18 - Vulcanbor',22,0)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          onclick="addToCart('Rexona Clinical',19.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -348,38 +344,38 @@
 
     <!-- ITEM -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card relative ">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
 
-      <div class="discount-badge bg-yellow-500">
-        -9,09%
+      <div class="discount-badge">
+        -10%
       </div>
 
       <img
-        src="https://m.media-amazon.com/images/I/51CegFmRNgL._AC_SX679_.jpg"
+        src="https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F13319424.webp&w=828&q=75"
         class="w-full h-56 object-cover"
       >
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
-          Pneu Pirelli - Aro 26 Monark
+        <h3 class="font-bold text-lg">
+          Vitamina C Infantil
         </h3>
 
         <div class="flex items-center gap-2 mb-4">
 
           <span class="text-gray-400 line-through">
-            R$ 55,00
+            R$ 16,90
           </span>
 
-          <span class="text-white text-2xl font-bold">
-            R$ 50,00
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 14,90
           </span>
 
         </div>
 
         <button
-          onclick="addToCart('Pneu Pirelli - Aro 26 Monark',50,0)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          onclick="addToCart('Vitamina C Infantil',14.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -390,38 +386,38 @@
 
     <!-- ITEM -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card relative">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
 
-      <div class="discount-badge bg-yellow-500">
-        -20%
+      <div class="discount-badge">
+        -10%
       </div>
 
       <img
-        src="https://m.media-amazon.com/images/I/61LQN966B2L._AC_SX679_.jpg"
+        src="https://www.drogaraia.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F10652359.webp&w=828&q=75"
         class="w-full h-56 object-cover"
       >
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
-          Caixa de Direção Standard 22.2mm 8 Peças
+        <h3 class="font-bold text-lg">
+          Protetor FPS 30
         </h3>
 
         <div class="flex items-center gap-2 mb-4">
 
           <span class="text-gray-400 line-through">
-            R$ 25,00
+            R$ 34,90
           </span>
 
-          <span class="text-white text-2xl font-bold">
-            R$ 20,00
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 29,90
           </span>
 
         </div>
 
         <button
-          onclick="addToCart('Caixa de Direção Standard 22.2mm 8 Peças',20,0)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          onclick="addToCart('Protetor FPS 30',29.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -432,38 +428,38 @@
 
     <!-- ITEM -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card relative">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card relative">
 
-      <div class="discount-badge bg-yellow-500">
-        -20%
+      <div class="discount-badge">
+        -10%
       </div>
 
       <img
-        src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRLAeaxUT-36swW0_YyLJWHVgaLIs1sEsUqU2x6UQEEu9QLhpa7DYTFcRUDP_woJZjd7vhtzuyugKhZ1frMR97tlg843yCQ"
+        src="https://m.media-amazon.com/images/I/617HsL3ssoL._AC_SY300_SX300_QL70_ML2_.jpg"
         class="w-full h-56 object-cover"
       >
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
-          Pedal Bike Mtb Nylon - Rosca Fina
+        <h3 class="font-bold text-lg">
+          Leite Ninho Forti+
         </h3>
 
         <div class="flex items-center gap-2 mb-4">
 
           <span class="text-gray-400 line-through">
-            R$ 25,00
+            R$ 29,90
           </span>
 
-          <span class="text-white text-2xl font-bold">
-            R$ 20,00
+          <span class="text-red-600 text-2xl font-bold">
+            R$ 25,90
           </span>
 
         </div>
 
         <button
-          onclick="addToCart('Pedal Bike Mtb Nylon - Rosca Fina',20.0)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          onclick="addToCart('Leite Ninho Forti+',25.90)"
+          class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -480,13 +476,13 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-blue-600 mb-5">
     💊 Medicamentos
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1200"
@@ -495,17 +491,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Dipirona
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-blue-600 text-2xl font-bold mb-4">
           R$ 9,90
         </p>
 
         <button
           onclick="addToCart('Dipirona',9.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -514,7 +510,7 @@
 
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1200"
@@ -523,17 +519,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Paracetamol
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-blue-600 text-2xl font-bold mb-4">
           R$ 12,90
         </p>
 
         <button
           onclick="addToCart('Paracetamol',12.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -542,7 +538,7 @@
 
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200"
@@ -551,17 +547,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Ibuprofeno
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-blue-600 text-2xl font-bold mb-4">
           R$ 16,90
         </p>
 
         <button
           onclick="addToCart('Ibuprofeno',16.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -570,7 +566,7 @@
 
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?q=80&w=1200"
@@ -579,17 +575,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Neosaldina
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-blue-600 text-2xl font-bold mb-4">
           R$ 14,90
         </p>
 
         <button
           onclick="addToCart('Neosaldina',14.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -598,7 +594,7 @@
 
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1631549916768-4119b4123a21?q=80&w=1200"
@@ -607,17 +603,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Buscopan
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-blue-600 text-2xl font-bold mb-4">
           R$ 18,90
         </p>
 
         <button
           onclick="addToCart('Buscopan',18.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -636,54 +632,54 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-pink-600 mb-5">
     🌸 Saúde Feminina
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Sempre Livre</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 12,90</p>
-        <button onclick="addToCart('Sempre Livre',12.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Sempre Livre</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 12,90</p>
+        <button onclick="addToCart('Sempre Livre',12.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Dermacyd</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Dermacyd',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Dermacyd</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Dermacyd',24.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Teste Gravidez</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Teste Gravidez',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Teste Gravidez</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Teste Gravidez',18.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Gino-Canesten</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 39,90</p>
-        <button onclick="addToCart('Gino-Canesten',39.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Gino-Canesten</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 39,90</p>
+        <button onclick="addToCart('Gino-Canesten',39.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Gillette Venus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Gillette Venus',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Gillette Venus</h3>
+        <p class="text-pink-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Gillette Venus',22.90)" class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
@@ -697,7 +693,7 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-cyan-600 mb-5">
     🦷 Higiene Bucal
   </h2>
 
@@ -705,7 +701,7 @@
 
     <!-- ITEM 1 -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?q=80&w=1200"
@@ -714,17 +710,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Colgate Total 12
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
           R$ 9,90
         </p>
 
         <button
           onclick="addToCart('Colgate Total 12',9.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -735,7 +731,7 @@
 
     <!-- ITEM 2 -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1559591937-abc6c1c5d6d4?q=80&w=1200"
@@ -744,17 +740,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Listerine Cool Mint
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
           R$ 18,90
         </p>
 
         <button
           onclick="addToCart('Listerine Cool Mint',18.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -765,7 +761,7 @@
 
     <!-- ITEM 3 -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1588771930296-88c2cb03f386?q=80&w=1200"
@@ -774,17 +770,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Escova Oral-B
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
           R$ 12,90
         </p>
 
         <button
           onclick="addToCart('Escova Oral-B',12.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -795,7 +791,7 @@
 
     <!-- ITEM 4 -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200"
@@ -804,17 +800,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Fio Dental Johnson
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
           R$ 8,90
         </p>
 
         <button
           onclick="addToCart('Fio Dental Johnson',8.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -825,7 +821,7 @@
 
     <!-- ITEM 5 -->
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
 
       <img
         src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200"
@@ -834,17 +830,17 @@
 
       <div class="p-4">
 
-        <h3 class="font-bold text-lg text-white">
+        <h3 class="font-bold text-lg">
           Corega Creme
         </h3>
 
-        <p class="text-white text-2xl font-bold mb-4">
+        <p class="text-cyan-600 text-2xl font-bold mb-4">
           R$ 24,90
         </p>
 
         <button
           onclick="addToCart('Corega Creme',24.90)"
-          class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold"
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-bold"
         >
           Adicionar
         </button>
@@ -863,54 +859,54 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-purple-600 mb-5">
     💇 Cuidados com Cabelo
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Pantene Restauração</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Tresemmé Reconstrução</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Clear Men Anticaspa</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 19,90</p>
-        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Elseve Reparação</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Óleo Bio Extratus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 29,90</p>
-        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-purple-600 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-purple-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
@@ -930,48 +926,48 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Pantene Restauração</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Tresemmé Reconstrução</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Clear Men Anticaspa</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 19,90</p>
-        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Elseve Reparação</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Óleo Bio Extratus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 29,90</p>
-        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-yellow-500 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
@@ -983,54 +979,54 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-green-600 mb-5">
     🩹 Primeiros Socorros
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Pantene Restauração</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Tresemmé Reconstrução</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Clear Men Anticaspa</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 19,90</p>
-        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Elseve Reparação</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Óleo Bio Extratus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 29,90</p>
-        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-green-600 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 </div>
@@ -1041,54 +1037,54 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-orange-500 mb-5">
     💪 Vitaminas
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Pantene Restauração</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Tresemmé Reconstrução</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Clear Men Anticaspa</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 19,90</p>
-        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Elseve Reparação</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Óleo Bio Extratus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 29,90</p>
-        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-orange-500 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
   </div>
@@ -1101,54 +1097,54 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-amber-500 mb-5">
     ☀️ Proteção Solar
   </h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Pantene Restauração</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Tresemmé Reconstrução</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Tresemmé Reconstrução</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Clear Men Anticaspa</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 19,90</p>
-        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Elseve Reparação</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Óleo Bio Extratus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 29,90</p>
-        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-amber-500 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
   </div>
@@ -1161,53 +1157,53 @@
 
 <div>
 
-  <h2 class="text-3xl font-bold text-yellow-500 mb-5">
+  <h2 class="text-3xl font-bold text-brown-600 mb-5">
     🍫 Conveniência
   </h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Pantene Restauração</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 24,90</p>
-        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Pantene Restauração</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 24,90</p>
+        <button onclick="addToCart('Pantene',24.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">TresemeReconstrução</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 22,90</p>
-        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">TresemeReconstrução</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 22,90</p>
+        <button onclick="addToCart('Tresemmé',22.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Clear Men Anticaspa</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 19,90</p>
-        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Clear Men Anticaspa</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 19,90</p>
+        <button onclick="addToCart('Clear Men',19.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Elseve Reparação</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 18,90</p>
-        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Elseve Reparação</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 18,90</p>
+        <button onclick="addToCart('Elseve',18.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
 
-    <div class="bg-black rounded-2xl shadow-md overflow-hidden product-card">
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card">
       <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" class="w-full h-56 object-cover">
       <div class="p-4">
-        <h3 class="font-bold text-lg text-white">Óleo Bio Extratus</h3>
-        <p class="text-white text-2xl font-bold mb-4">R$ 29,90</p>
-        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-xl font-bold">Adicionar</button>
+        <h3 class="font-bold text-lg">Óleo Bio Extratus</h3>
+        <p class="text-black-600 text-2xl font-bold mb-4">R$ 29,90</p>
+        <button onclick="addToCart('Óleo Bio Extratus',29.90)" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-bold">Adicionar</button>
       </div>
     </div>
   </div>
@@ -1219,7 +1215,7 @@
 
 </section>
 
-<!-- ===================================================== -->
+ <!-- ===================================================== -->
 <!-- CESTA -->
 <!-- ===================================================== -->
 
@@ -1435,7 +1431,7 @@
 <!-- RODAPÉ -->
 <!-- ===================================================== -->
 
-<footer class="bg-black text-white mt-12">
+<footer class="bg-[#003b7a] text-white mt-12">
 
   <div class="max-w-7xl mx-auto px-4 py-12">
 
